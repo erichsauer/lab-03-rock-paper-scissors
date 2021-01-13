@@ -24,25 +24,36 @@
                 Ro Sham Bo!
             </h2>
             <content>
-                <div class="rules-container">
-                    <div class="rules">
-                        <ul>
+                <div id="rules-container">
+                    <ul>
                             <li>rock beats scissors</li>
                             <li>paper beats rock</li>
                             <li>scissors beats paper</li>
                             <li>two of the same is a draw!</li>
-                        </ul>
-                    </div>
+                    </ul>
                 </div>
-<!-- - Radio buttons
-    - rock
-    - paper
-    - scissors
-- Button for "Play"
-- Display div for wins and losses and draws
-- Display of result of each game
-    - should indicate what the computer threw and what the result was (win, loss, draw) -->
-
+                <div id="game-container">
+                    <div id="radio-buttons">
+                        <label class="rps-item">
+                            Rock
+                            <input type="radio" name="rps" value="rock">
+                            <img src="http://www.placekitten.com/50" alt="">
+                        </label>
+                        <label>
+                            Paper
+                            <input type="radio" name="rps" value="paper">
+                            <img src="http://www.placekitten.com/50" alt="">
+                        </label>
+                        <label>
+                            Scissors
+                            <input type="radio" name="rps" value="scissors">
+                            <img src="http://www.placekitten.com/50" alt="">
+                        </label>
+                    </div>
+                    <button id="play-button"></button>
+                    <div id="game-result-div">game results</div>
+                    <div id="score-tally-div">score tally</div>
+                </div>
             </content>
         </section>
     </main>

@@ -1,7 +1,9 @@
-//getRandomThrow function
-
-// This function needs to generate a random numbers and triage that into returning rock, paper, or scissors accordingly.
-
+export function randomThrow() {
+    const throwAsNumber = Math.ceil(Math.random() * 3);
+    if (throwAsNumber === 1) return 'rock';
+    if (throwAsNumber === 2) return 'paper';
+    if (throwAsNumber === 3) return 'scissors';
+}
 
 // Given a user choice, and a random throw for the computer, we will need to know the game result (from the user's perspective): "win", "lose", or "draw"
 

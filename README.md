@@ -29,9 +29,8 @@
     wins = 0
     losses = 0
     draws = 0
-- Add event listener(s):
+- Add event listener:
     - play button
-    - play again button
 
 # Logic plan
 

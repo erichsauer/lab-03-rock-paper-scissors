@@ -119,12 +119,36 @@ input:checked + img {
 }
 
 .game-title {
-    border: solid greenyellow 10px;
+    border-color: hotpink;
     padding: 20px;
     width: 100%;
     text-align: center;
     margin-top: 0px;
+    border: solid 5px;
+    animation-name: border-blink ;
+    animation-duration: .5s ;
+    animation-timing-function: step-start ;
+    animation-iteration-count: infinite ;
+    animation-direction: alternate ;
 }
+
+@keyframes border-blink {
+    0% {
+        border-color: aqua;
+    }
+    25% {
+        border-color: hotpink;
+    }
+    50% {
+        border-color: yellow;
+    }
+    75% {
+        border-color: greenyellow;
+    }
+    100% {
+        border-color: aqua; */
+    }}
+    
 
 .rules-container {
     margin-bottom: 20px;

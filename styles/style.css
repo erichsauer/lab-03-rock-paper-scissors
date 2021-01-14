@@ -15,7 +15,7 @@ body {
     
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
-    --gutter: 30px;
+    --gutter: 15px;
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
@@ -123,6 +123,7 @@ input:checked + img {
     padding: 20px;
     width: 100%;
     text-align: center;
+    margin-top: 0px;
 }
 
 .rules-container {
@@ -188,7 +189,7 @@ button {
 
 #commentary {
     font-size: 1rem;
-    width: 100%;
+    width: 550px;
     text-align: center;
     margin-top: 10px;
 }

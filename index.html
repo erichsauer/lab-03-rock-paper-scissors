@@ -22,35 +22,37 @@
             <h2 class="game-title">
                 Rock Paper Scissors!
             </h2>
+            <p class="rules-intro">It's human vs. machine.</p>
             <content class='rules-container'>
                 <ul>
-                        <li>rock beats scissors</li>
-                        <li>paper beats rock</li>
-                        <li>scissors beats paper</li>
-                        <li>two of the same is a draw!</li>
+                    <li>rock beats scissors</li>
+                    <li>paper beats rock</li>
+                    <li>scissors beats paper</li>
+                    <li>two of the same is a draw!</li>
                 </ul>
             </content>
             <content class="game-container">
+                <div id="game-result-div">Are you ready to play?</div>
                 <div class="radio-buttons">
-                    <label class="rps-item">
-                        Rock
-                        <input type="radio" name="rps" value="rock">
-                        <img src="http://www.placekitten.com/50" alt="">
+                    <label>
+                        <input type="radio" name="rps" value="rock" checked>
+                        <img src="./assets/rock.png" alt="" />
                     </label>
-                    <label class="rps-item">
-                        Paper
+                    <label>
                         <input type="radio" name="rps" value="paper">
-                        <img src="http://www.placekitten.com/50" alt="">
+                        <img src="./assets/paper.png" alt="" />
                     </label>
-                    <label class="rps-item">
-                        Scissors
+                    <label>
                         <input type="radio" name="rps" value="scissors">
-                        <img src="http://www.placekitten.com/50" alt="">
+                        <img src="./assets/scissors.png" alt="" />
                     </label>
                 </div>
-                <button id="play-button">Play!</button>
-                <div id="game-result-div">Welcome! Are you ready to play?</div>
+                <div class="button-container">                
+                    <button id="play-button">1-2-3   GO!</button>
+                    <button id="reset-button">Reset</button>
+                </div>
                 <div id="score-tally-div"></div>
+                <div id="commentary"></div>
             </content>
         </section>
     </main>

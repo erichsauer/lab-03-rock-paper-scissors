@@ -34,17 +34,17 @@
 
 # Logic plan
 
-    - if user plays rock
-        - computer plays rock and draw++
-        - computer plays scissors and win++
-        - computer plays paper and loss++
-    - if user plays paper
-        - computer plays rock and win++
-        - computer plays scissors and loss++
-        - computer plays paper and draw++
-    - if user plays scissors
-        - computer plays rock and loss++
-        - computer plays scissors and draw++
-        - computer plays paper and win++
+- if user plays rock
+    - computer plays rock and draw++
+    - computer plays scissors and win++
+    - computer plays paper and loss++
+- if user plays paper
+    - computer plays rock and win++
+    - computer plays scissors and loss++
+    - computer plays paper and draw++
+- if user plays scissors
+    - computer plays rock and loss++
+    - computer plays scissors and draw++
+    - computer plays paper and win++
     
     

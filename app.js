@@ -39,7 +39,7 @@ playButton.addEventListener('click', () => {
     if (didUserWin(playerThrow, computerThrow) === 'win') {
         wins++;
 
-        gameResults = `You WON Round ${round}! Play agin?`;
+        gameResults = `You WON Round ${round}!`;
         commentary = `🤖 "Beep boop bleep! My ${computerThrow} must have malfunctioned!"`;
         
         gameResultsDiv.style.backgroundColor = 'aqua';

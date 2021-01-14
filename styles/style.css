@@ -131,7 +131,7 @@ input:checked + img {
 }
 
 .rules-intro {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 1rem;
     font-style: italic;
     font-weight: bold;

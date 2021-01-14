@@ -14,3 +14,21 @@ export function didUserWin(player, computer) {
     if (player === 'scissors' && computer === 'paper') return 'win';
     if (player === 'scissors' && computer === 'rock') return 'lose';
 }
+
+export function displayOff() {
+    for (let i = 0; i < arguments.length; i++) {
+        arguments[i].style.display = 'none';
+    }}
+
+export function displayOn() {
+    for (let i = 0; i < arguments.length; i++) {
+        arguments[i].style.display = 'block';
+    }}
+
+export function changeBackgroundColor(input, color) {
+    input.style.backgroundColor = color;
+}
+
+export function changeBorderColor(input, color) {
+    input.style.borderColor = color;
+}

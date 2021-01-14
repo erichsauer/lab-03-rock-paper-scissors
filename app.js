@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { randomThrow, didUserWin } from './utils.js';
+import { randomThrow, didUserWin, displayOff, displayOn, changeBackgroundColor, changeBorderColor } from './utils.js';
 
 const playButton = document.getElementById('play-button');
 const playAgainButton = document.getElementById('play-again-button');
@@ -23,18 +23,15 @@ let commentary;
 
 // set event listeners to update state and DOM
 playButton.addEventListener('click', () => {
+
     const selectedRadioButton = document.querySelector('input[type="radio"]:checked');
     const playerThrow = selectedRadioButton.value;
     const computerThrow = randomThrow();
-
-    playAgainButton.style.display = 'block';
-    resetButton.style.display = 'block';
-
+    
     round++;
     
-    rock.style.display = 'none';
-    paper.style.display = 'none';
-    scissors.style.display = 'none';
+    displayOn(playAgainButton, resetButton);
+    displayOff(rock, paper, scissors);
 
     if (didUserWin(playerThrow, computerThrow) === 'win') {
         wins++;
@@ -42,52 +39,55 @@ playButton.addEventListener('click', () => {
         gameResults = `You WON Round ${round}!`;
         commentary = `🤖 "Beep boop bleep! My ${computerThrow} must have malfunctioned!"`;
         
-        gameResultsDiv.style.backgroundColor = 'aqua';
+        changeBackgroundColor(gameResultsDiv, 'aqua');
     }
+
     if (didUserWin(playerThrow, computerThrow) === 'lose') {
         losses++;
         
         gameResults = `You LOST Round ${round}!`;
         commentary = `🤖 "Puny human! My ${computerThrow} destroyed you easily!"`;
         
-        gameResultsDiv.style.backgroundColor = 'hotpink';
+        changeBackgroundColor(gameResultsDiv, 'hotpink');
+
     }
+
     if (didUserWin(playerThrow, computerThrow) === 'draw') {
         draws++;
         
-        gameResults = `Round ${round} is a DRAW!`;
+        gameResults = `Round ${round} is a DRAW...`;
         commentary = `🤖 "How original to simply copy my ${computerThrow}!"`;
         
-        gameResultsDiv.style.backgroundColor = 'yellow';
-        compImage.style.borderColor = 'yellow';
-        playerImage.style.borderColor = 'yellow';
+        changeBackgroundColor(gameResultsDiv, 'yellow');
+        changeBorderColor(compImage, 'yellow');
+        changeBorderColor(playerImage, 'yellow');
+
     }
     
     compImage.src = `./assets/${computerThrow}.png`;
-    compImage.style.display = 'block';
     playerImage.src = `./assets/${playerThrow}.png`;
-    playerImage.style.display = 'block';
-    playButton.style.display = 'none';
+
+    displayOn(compImage, playerImage);
+    displayOff(playButton);
     
     gameResultsDiv.textContent = gameResults;
     commentaryDiv.textContent = commentary;
     scoreTallyDiv.textContent = `🏆×${wins} 😵×${losses} 😐×${draws}`;
+
 });
 
 playAgainButton.addEventListener('click', () => {
-    compImage.style.borderColor = 'hotpink';
-    playerImage.style.borderColor = 'aqua';
 
-    rock.style.display = 'block';
-    paper.style.display = 'block';
-    scissors.style.display = 'block';
-    playerImage.style.display = 'none';
-    compImage.style.display = 'none';
-    playButton.style.display = 'block';
-    playAgainButton.style.display = 'none';
+    changeBorderColor(compImage, 'hotpink');
+    changeBorderColor(playerImage, 'aqua');
+
+    displayOn(rock, paper, scissors, playButton);
+    displayOff(playerImage, compImage, playAgainButton);
+
 });
 
 resetButton.addEventListener('click', () => {
+    
     wins = 0;
     losses = 0;
     draws = 0;
@@ -97,14 +97,9 @@ resetButton.addEventListener('click', () => {
     scoreTallyDiv.textContent = '';
     commentaryDiv.textContent = '';
     
-    gameResultsDiv.style.backgroundColor = 'greenyellow';
-    
-    rock.style.display = 'block';
-    paper.style.display = 'block';
-    scissors.style.display = 'block';
-    playerImage.style.display = 'none';
-    compImage.style.display = 'none';
-    playAgainButton.style.display = 'none';
-    playButton.style.display = 'block';
-    resetButton.style.display = 'none';
+    changeBackgroundColor(gameResultsDiv, 'greenyellow');
+
+    displayOn(rock, paper, scissors, playButton);
+    displayOff(playerImage, compImage, playAgainButton, resetButton);
+
 });

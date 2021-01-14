@@ -25,9 +25,9 @@
             <p class="rules-intro">It's human vs. machine.</p>
             <content class='rules-container'>
                 <ul>
-                    <li>rock beats scissors</li>
-                    <li>paper beats rock</li>
-                    <li>scissors beats paper</li>
+                    <li>rock smashes scissors</li>
+                    <li>paper beats rock for some reason</li>
+                    <li>scissors cut paper</li>
                     <li>two of the same is a draw!</li>
                 </ul>
             </content>
@@ -36,19 +36,21 @@
                 <div class="radio-buttons">
                     <label>
                         <input type="radio" name="rps" value="rock" checked>
-                        <img src="./assets/rock.png" alt="" />
+                        <img id="rock" src="./assets/rock.png" alt="" />
                     </label>
                     <label>
                         <input type="radio" name="rps" value="paper">
-                        <img src="./assets/paper.png" alt="" />
+                        <img id="paper" src="./assets/paper.png" alt="" />
                     </label>
                     <label>
                         <input type="radio" name="rps" value="scissors">
-                        <img src="./assets/scissors.png" alt="" />
+                        <img id="scissors" src="./assets/scissors.png" alt="" />
                     </label>
+                    <img id="comp-image" src="./assets/scissors.png" alt="" />
                 </div>
                 <div class="button-container">                
                     <button id="play-button">1-2-3   GO!</button>
+                    <button id="play-again-button">Play again!</button>
                     <button id="reset-button">Reset</button>
                 </div>
                 <div id="score-tally-div"></div>

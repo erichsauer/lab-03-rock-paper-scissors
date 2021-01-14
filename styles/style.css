@@ -110,7 +110,7 @@ img {
 }
 
 input:checked + img {
-    border: solid 5px orangered;
+    border: solid 5px aqua;
 } 
 
 .main-section {
@@ -198,5 +198,10 @@ button {
 
 #comp-image {
     display: none;
-    border: solid 5px lavender;
+    border: solid 5px hotpink;
+}
+
+#player-image {
+    display: none;
+    border: solid 5px aqua;
 }

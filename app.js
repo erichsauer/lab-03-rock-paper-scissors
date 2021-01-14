@@ -11,6 +11,7 @@ const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 const compImage = document.getElementById('comp-image');
+const playerImage = document.getElementById('player-image');
 
 // initialize state
 let wins = 0;
@@ -31,11 +32,9 @@ playButton.addEventListener('click', () => {
 
     round++;
     
-    if (playerThrow !== 'rock') rock.style.display = 'none';
-
-    if (playerThrow !== 'paper') paper.style.display = 'none';
-
-    if (playerThrow !== 'scissors') scissors.style.display = 'none';
+    rock.style.display = 'none';
+    paper.style.display = 'none';
+    scissors.style.display = 'none';
 
     if (didUserWin(playerThrow, computerThrow) === 'win') {
         wins++;
@@ -43,7 +42,7 @@ playButton.addEventListener('click', () => {
         gameResults = `You WON Round ${round}! Play agin?`;
         commentary = `🤖 "Beep boop bleep! My ${computerThrow} must have malfunctioned!"`;
         
-        gameResultsDiv.style.backgroundColor = 'aquamarine';
+        gameResultsDiv.style.backgroundColor = 'aqua';
     }
     if (didUserWin(playerThrow, computerThrow) === 'lose') {
         losses++;
@@ -60,10 +59,14 @@ playButton.addEventListener('click', () => {
         commentary = `🤖 "How original to simply copy my ${computerThrow}!"`;
         
         gameResultsDiv.style.backgroundColor = 'yellow';
+        compImage.style.borderColor = 'yellow';
+        playerImage.style.borderColor = 'yellow';
     }
     
     compImage.src = `./assets/${computerThrow}.png`;
     compImage.style.display = 'block';
+    playerImage.src = `./assets/${playerThrow}.png`;
+    playerImage.style.display = 'block';
     playButton.style.display = 'none';
     
     gameResultsDiv.textContent = gameResults;
@@ -72,9 +75,13 @@ playButton.addEventListener('click', () => {
 });
 
 playAgainButton.addEventListener('click', () => {
+    compImage.style.borderColor = 'hotpink';
+    playerImage.style.borderColor = 'aqua';
+
     rock.style.display = 'block';
     paper.style.display = 'block';
     scissors.style.display = 'block';
+    playerImage.style.display = 'none';
     compImage.style.display = 'none';
     playButton.style.display = 'block';
     playAgainButton.style.display = 'none';
@@ -91,6 +98,13 @@ resetButton.addEventListener('click', () => {
     commentaryDiv.textContent = '';
     
     gameResultsDiv.style.backgroundColor = 'greenyellow';
+    
+    rock.style.display = 'block';
+    paper.style.display = 'block';
+    scissors.style.display = 'block';
+    playerImage.style.display = 'none';
+    compImage.style.display = 'none';
     playAgainButton.style.display = 'none';
+    playButton.style.display = 'block';
     resetButton.style.display = 'none';
 });

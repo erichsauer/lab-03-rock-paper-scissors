@@ -57,7 +57,7 @@ playButton.addEventListener('click', () => {
         losses++;
         bank -= bet;
         
-        gameResults = `You LOST Round ${round}!`;
+        gameResults = `Robot WON Round ${round}!`;
         commentary = `🤖 "Puny human! My ${computerThrow} destroyed you easily!"`;
         
         changeBackgroundColor(gameResultsDiv, 'hotpink');
@@ -82,7 +82,7 @@ playButton.addEventListener('click', () => {
     
     gameResultsDiv.textContent = gameResults;
     commentaryDiv.textContent = commentary;
-    scoreTallyDiv.textContent = `🏆×${wins} 💰${bank} 😵×${losses} 😐×${draws}`;
+    scoreTallyDiv.textContent = `🏆×${wins} 💰×${bank} 🦾×${losses} 😐×${draws}`;
 });
 
 playAgainButton.addEventListener('click', () => {
@@ -105,7 +105,7 @@ resetButton.addEventListener('click', () => {
     round = 0;
     
     betDisplay.textContent = '¢';
-    gameResultsDiv.textContent = 'Game reset!';
+    gameResultsDiv.textContent = 'Reset! Start new game?';
     scoreTallyDiv.textContent = '';
     commentaryDiv.textContent = '';
     

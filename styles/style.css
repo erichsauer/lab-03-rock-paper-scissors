@@ -146,7 +146,7 @@ input:checked + img {
         border-color: greenyellow;
     }
     100% {
-        border-color: aqua; */
+        border-color: aqua;
     }}
     
 
@@ -185,7 +185,7 @@ ul {
     font-size: 1.25rem;
     padding: 10px 20px 10px 20px;
     text-align: center;
-    background-color: greenyellow;
+    background-color: gold;
     font-weight: bold;
 }
 
@@ -193,8 +193,8 @@ ul {
     display: flex;
     width: 75%;
     align-items: center;
-    justify-content: space-evenly;
-    margin-top: 20px;    
+    margin-top: 20px;  
+    justify-content: center;  
 }
 
 button {
@@ -204,6 +204,7 @@ button {
     font-family: monospace;
     font-size: 1rem;
     font-weight: bolder;
+    margin: 0px 10px 0px 10px;
 }
 
 #score-tally-div {
@@ -230,4 +231,19 @@ button {
 #player-image {
     display: none;
     border: solid 5px aqua;
+}
+
+#bet-display {
+    border: solid 5px goldenrod;
+    background-color: gold;
+    font-family: monospace;
+    font-size: 3rem;
+    font-weight: bolder;
+    width: 65px;
+    height: 65px;
+    border-radius: 32.5px;
+    text-align: center;
+    text-justify: center;
+    padding: 0px;
+    color: goldenrod;
 }

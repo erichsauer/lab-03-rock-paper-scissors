@@ -23,7 +23,7 @@ let round = 0;
 let gameResults;
 let commentary;
 let bet = 0;
-betDisplay.textContent = '$';
+betDisplay.textContent = '¢';
 
 // set event listeners to update state and DOM
 betDisplay.addEventListener('click', () => {
@@ -87,13 +87,13 @@ playButton.addEventListener('click', () => {
 
 playAgainButton.addEventListener('click', () => {
     bet = 0;
-    betDisplay.textContent = '$';
+    betDisplay.textContent = '¢';
 
     changeBorderColor(compImage, 'hotpink');
     changeBorderColor(playerImage, 'aqua');
 
     displayOn(rock, paper, scissors, playButton, betDisplay);
-    displayOff(playerImage, compImage, playAgainButton);
+    displayOff(playerImage, compImage, playAgainButton, resetButton);
 });
 
 resetButton.addEventListener('click', () => {
@@ -104,7 +104,7 @@ resetButton.addEventListener('click', () => {
     draws = 0;
     round = 0;
     
-    betDisplay.textContent = '$';
+    betDisplay.textContent = '¢';
     gameResultsDiv.textContent = 'Game reset!';
     scoreTallyDiv.textContent = '';
     commentaryDiv.textContent = '';

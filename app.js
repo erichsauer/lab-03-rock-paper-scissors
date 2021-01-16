@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { randomThrow, didUserWin, displayOff, displayOn, changeBackgroundColor, changeBorderColor } from './utils.js';
+import { randomThrow, didUserWin, displayOff, displayOn, changeBackgroundColor, changeBorderColor, resetScores } from './utils.js';
 
 const playButton = document.getElementById('play-button');
 const playAgainButton = document.getElementById('play-again-button');
@@ -47,7 +47,7 @@ playButton.addEventListener('click', () => {
         wins++;
         bank += bet;
         
-        gameResults = `You WON Round ${round}!`;
+        gameResults = `You WIN Round ${round}!`;
         commentary = `🤖 "Beep boop bleep! My ${computerThrow} must have malfunctioned!"`;
         
         changeBackgroundColor(gameResultsDiv, 'aqua');
@@ -57,7 +57,7 @@ playButton.addEventListener('click', () => {
         losses++;
         bank -= bet;
         
-        gameResults = `Robot WON Round ${round}!`;
+        gameResults = `Robot WINS Round ${round}!`;
         commentary = `🤖 "Puny human! My ${computerThrow} destroyed you easily!"`;
         
         changeBackgroundColor(gameResultsDiv, 'hotpink');
@@ -96,13 +96,19 @@ playAgainButton.addEventListener('click', () => {
     displayOff(playerImage, compImage, playAgainButton, resetButton);
 });
 
-resetButton.addEventListener('click', () => {
-    bet = 0;
-    bank = 0;
-    wins = 0;
-    losses = 0;
-    draws = 0;
-    round = 0;
+resetButton.addEventListener('click', () => {    
+    // bet = 0;
+    // bank = 0;
+    // wins = 0;
+    // losses = 0;
+    // draws = 0;
+    // round = 0;
+    // resetScores(bet, bank, wins, losses, draws, round);
+    const resetArray = [bet, bank, wins, losses, draws, round];
+    for (const iterator of resetArray) {
+        console.log(iterator);
+    }
+    console.log(bet, bank, wins);
     
     betDisplay.textContent = '¢';
     gameResultsDiv.textContent = 'Reset! Start new game?';

@@ -1,5 +1,5 @@
 // import functions and grab DOM elements
-import { randomThrow, didUserWin, displayOff, displayOn, changeBackgroundColor, changeBorderColor, resetScores } from './utils.js';
+import { randomThrow, didUserWin, displayOff, displayOn, changeBackgroundColor, changeBorderColor } from './utils.js';
 
 const playButton = document.getElementById('play-button');
 const playAgainButton = document.getElementById('play-again-button');
@@ -20,14 +20,23 @@ let wins = 0;
 let losses = 0;
 let draws = 0;
 let round = 0;
+let bet = 0;
 let gameResults;
 let commentary;
-let bet = 0;
-betDisplay.textContent = '¢';
+
+// local functions
+function resetScores() {
+    bet = 0;
+    bank = 0;
+    wins = 0;
+    losses = 0;
+    draws = 0;
+    round = 0;
+}
 
 // set event listeners to update state and DOM
 betDisplay.addEventListener('click', () => {
-    if (bet < 3) { bet++; } else { bet = 0; }
+    if (bet < 3) { bet++; } else { bet = 1; }
 
     betDisplay.textContent = bet;
 });
@@ -97,19 +106,8 @@ playAgainButton.addEventListener('click', () => {
 });
 
 resetButton.addEventListener('click', () => {    
-    // bet = 0;
-    // bank = 0;
-    // wins = 0;
-    // losses = 0;
-    // draws = 0;
-    // round = 0;
-    // resetScores(bet, bank, wins, losses, draws, round);
-    const resetArray = [bet, bank, wins, losses, draws, round];
-    for (const iterator of resetArray) {
-        console.log(iterator);
-    }
-    console.log(bet, bank, wins);
-    
+    resetScores();
+
     betDisplay.textContent = '¢';
     gameResultsDiv.textContent = 'Reset! Start new game?';
     scoreTallyDiv.textContent = '';

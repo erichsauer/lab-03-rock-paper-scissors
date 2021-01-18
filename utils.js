@@ -19,11 +19,6 @@ export function displayOff() {
     for (let i = 0; i < arguments.length; i++) {
         arguments[i].style.display = 'none';
     }}
-    
-export function resetScores() {
-    for (let i = 0; i < arguments.length; i++) {
-        return arguments[i] = 0;
-    }}
 
 export function displayOn() {
     for (let i = 0; i < arguments.length; i++) {

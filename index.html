@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,7 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
-    <title>Document</title>
+    <title>Do you have what it takes to play...</title>
 </head>
 
 <body>
@@ -20,28 +19,45 @@
     </header>
     <main>
         <section class="main-section">
-            <img class="main-logo" src="assets/alchemy-logo.png"/>
-            <h2>
-                Welcome to Alchemy Bootstrap!
+            <h2 class="game-title">
+                Rock Paper Scissors!
             </h2>
-
-            <content>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam repellendus similique consectetur voluptas facilis molestiae voluptates nobis error sapiente, ad, ipsa vero non, sint eligendi? Eos praesentium iusto magnam exercitationem.
-                Earum sunt voluptatibus molestias, sint voluptatum quos reiciendis. Id asperiores deleniti dolores provident, eius, nostrum aperiam vel, optio qui illo corrupti in. Eum quam, est nemo porro sapiente excepturi assumenda.
-                Rerum unde quidem maxime. Ullam, dolores labore molestias voluptatibus adipisci quod? Quaerat nihil inventore molestiae assumenda, voluptates vel necessitatibus eligendi? Accusamus ratione eligendi reprehenderit? Beatae incidunt molestias ea soluta nulla.
-                Fugiat quae soluta voluptate mollitia praesentium modi ex illo, autem assumenda, vel aliquam fugit possimus dolorem esse corporis ipsa! Voluptatem sapiente error non, ea optio suscipit quasi maxime nobis ex?
-                Et ipsa tenetur ullam ab nesciunt quas fugit velit impedit illum esse eligendi corporis culpa praesentium aspernatur ex sint veniam quidem, doloribus corrupti hic vitae. Eum neque ducimus omnis exercitationem?
-            </p>
-            <hr />
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam repellendus similique consectetur voluptas facilis molestiae voluptates nobis error sapiente, ad, ipsa vero non, sint eligendi? Eos praesentium iusto magnam exercitationem.
-                Earum sunt voluptatibus molestias, sint voluptatum quos reiciendis. Id asperiores deleniti dolores provident, eius, nostrum aperiam vel, optio qui illo corrupti in. Eum quam, est nemo porro sapiente excepturi assumenda.
-                Rerum unde quidem maxime. Ullam, dolores labore molestias voluptatibus adipisci quod? Quaerat nihil inventore molestiae assumenda, voluptates vel necessitatibus eligendi? Accusamus ratione eligendi reprehenderit? Beatae incidunt molestias ea soluta nulla.
-                Fugiat quae soluta voluptate mollitia praesentium modi ex illo, autem assumenda, vel aliquam fugit possimus dolorem esse corporis ipsa! Voluptatem sapiente error non, ea optio suscipit quasi maxime nobis ex?
-                Et ipsa tenetur ullam ab nesciunt quas fugit velit impedit illum esse eligendi corporis culpa praesentium aspernatur ex sint veniam quidem, doloribus corrupti hic vitae. Eum neque ducimus omnis exercitationem?
-            </p>
-
+            <p class="rules-intro">The ultimate test of human vs. machine has four simple rules:</p>
+            <content class='rules-container'>
+                <ul>
+                    <li>rock smashes scissors</li>
+                    <li>paper beats rock for some reason</li>
+                    <li>scissors cut paper</li>
+                    <li>two of the same is a draw!</li>
+                </ul>
+            </content>
+            <content class="game-container">
+                <div id="game-result-div">Place a bet & play!</div>
+                <div class="radio-buttons">
+                    <label>
+                        <input type="radio" name="rps" value="rock" checked>
+                        <img class="" id="rock" src="./assets/rock.png" alt="" />
+                    </label>
+                    <label>
+                        <input type="radio" name="rps" value="paper">
+                        <img class="" id="paper" src="./assets/paper.png" alt="" />
+                    </label>
+                    <label>
+                        <input type="radio" name="rps" value="scissors">
+                        <img class="" id="scissors" src="./assets/scissors.png" alt="" />
+                    </label>
+                    <img id="player-image" src="./assets/scissors.png" alt="" />
+                    <img id="comp-image" src="./assets/scissors.png" alt="" />
+                </div>
+                <div class="button-container">
+                    <button id="bet-display">¢</button>
+                    <button id="play-button">1-2-3   GO!</button>
+                    <button id="play-again-button">Play again!</button>
+                    <button id="reset-button">Reset</button>
+                </div>
+                <div id="score-tally-div"></div>
+                <div id="commentary"></div>
+            </content>
         </section>
     </main>
     <footer>

@@ -36,13 +36,12 @@ function resetScores() {
 
 // set event listeners to update state and DOM
 betDisplay.addEventListener('click', () => {
-    if (bet < 3) { bet++; } else { bet = 1; }
+    bet < 3 ? bet++ : bet = 1;
 
     betDisplay.textContent = bet;
 });
 
 playButton.addEventListener('click', () => {
-
     const selectedRadioButton = document.querySelector('input[type="radio"]:checked');
     const playerThrow = selectedRadioButton.value;
     const computerThrow = randomThrow();
